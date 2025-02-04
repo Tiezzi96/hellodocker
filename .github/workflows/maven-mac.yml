@@ -16,12 +16,12 @@ jobs:
        java-version: 1.8
     - name: Install Docker
       uses: docker-practice/actions-setup-docker@master
-    - name: Cache of Maven packages
-      uses: actions/cache@v2
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', '**/*.yml') }}
-        restore-keys: ${{ runner.os }}-m2-
+	#  - name: Cache of Maven packages
+    #  uses: actions/cache@v2
+    #  with:
+    #    path: ~/.m2
+    #    key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', '**/*.yml') }}
+    #    restore-keys: ${{ runner.os }}-m2-
     - name: Build with Maven
       run: mvn verify -Pdocker
       working-directory: hellodocker 
