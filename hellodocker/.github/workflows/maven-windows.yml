@@ -9,7 +9,6 @@ jobs:
     runs-on: windows-latest
     env:
       DOCKER_HOST: tcp://localhost:2375
-	  
     name: Build in Windows
     steps:
     - uses: actions/checkout@v2
