@@ -23,5 +23,5 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', '**/*.yml') }}
         restore-keys: ${{ runner.os }}-m2-
     - name: Build with Maven
-      run: mvn verify -Pdocker
-      working-directory: com.example.hellodocker 
+      run: mvn -f com.example.hellodocker/pom.xml verify -Pdocker
+      # working-directory: com.example.hellodocker 
