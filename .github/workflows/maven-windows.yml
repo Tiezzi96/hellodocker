@@ -7,8 +7,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    env:
-      DOCKER_HOST: "tcp://localhost:2375"
+    # env:
+      # DOCKER_HOST: "tcp://localhost:2375"
     name: Build in Windows
     steps:
     - uses: actions/checkout@v2
@@ -16,16 +16,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
        java-version: 1.8
-    - name: Docker Config
-      run: >
-        sc config docker
-        binpath="dockerd.exe --run-service -H tcp://localhost:2375"
-    - name: Get Service Docker
-      run: get-service *docker*
-    - name: Docker restart
-      run: restart-service *docker*
-    - name: Docker info
-      run: docker info
+    # - name: Docker Config
+    #   run: >
+    #    sc config docker
+    #    binpath="dockerd.exe --run-service -H tcp://localhost:2375"
+    # - name: Get Service Docker
+    #   run: get-service *docker*
+    # - name: Docker restart
+    #  run: restart-service *docker*
+    # - name: Docker info
+    #  run: docker info
     - name: Cache of Maven packages
       uses: actions/cache@v2
       with:
