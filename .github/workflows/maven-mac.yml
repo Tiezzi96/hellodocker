@@ -16,7 +16,7 @@ jobs:
        java-version: 1.8
     - name: Install Docker
       uses: docker-practice/actions-setup-docker@master
-	#  - name: Cache of Maven packages
+    #  - name: Cache of Maven packages
     #  uses: actions/cache@v2
     #  with:
     #    path: ~/.m2
